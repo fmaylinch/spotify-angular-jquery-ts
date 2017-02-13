@@ -1,10 +1,10 @@
 
 // Adds jQuery types
-/// <reference path="../typings/jquery.d.ts" />
+/// <reference path="../common/typings/jquery.d.ts" />
 
 console.log("Setting up jQuery things!");
 
-let resultDiv = $("#results");
+let resultDiv : JQuery = $("#results");
 
 let settings = {
     method: "GET",
@@ -19,11 +19,11 @@ let settings = {
 
 console.log("Sending AJAX call!")
 
-let result = $.ajax(settings);
+let promise : JQueryXHR = $.ajax(settings);
 
 console.log("Waiting for the promise value...");
 
-result.done(function (data) {
+promise.done(function (data) {
 
     console.log("Received a successful response!")
     console.log(data);
@@ -36,7 +36,7 @@ result.done(function (data) {
     }
 });
 
-result.fail(function(jqXHR, textStatus, errorThrown) {
+promise.fail(function(jqXHR, textStatus, errorThrown) {
   console.error("Call failed:", jqXHR);
 });
 

@@ -1,12 +1,12 @@
 
 // Adds AngularJS types
-/// <reference path="../typings/angular.d.ts" />
+/// <reference path="../common/typings/angular.d.ts" />
 
 console.log("Setting up angular module!");
 
-let app = angular.module('spotifyApp', []);
+let app : ng.IModule = angular.module('spotifyApp', []);
 
-app.controller('MainController', function($scope, $http) {
+app.controller('MainController', function($scope, $http: ng.IHttpService) {
 
   console.log("Configuring MainController!");
 

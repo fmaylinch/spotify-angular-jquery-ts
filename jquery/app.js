@@ -11,9 +11,9 @@ var settings = {
     }
 };
 console.log("Sending AJAX call!");
-var result = $.ajax(settings);
+var promise = $.ajax(settings);
 console.log("Waiting for the promise value...");
-result.done(function (data) {
+promise.done(function (data) {
     console.log("Received a successful response!");
     console.log(data);
     var artists = data.artists.items;
@@ -23,7 +23,7 @@ result.done(function (data) {
         resultDiv.append(artistDiv);
     }
 });
-result.fail(function (jqXHR, textStatus, errorThrown) {
+promise.fail(function (jqXHR, textStatus, errorThrown) {
     console.error("Call failed:", jqXHR);
 });
 function createArtistDiv(artist) {
