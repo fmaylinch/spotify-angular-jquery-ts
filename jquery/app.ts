@@ -29,7 +29,7 @@ promise.done(function (data: SpotifyApi.ArtistSearchResponse) {
     console.log("Received a successful response!")
     console.log(data);
 
-    let artists = data.artists.itsems;
+    let artists = data.artists.items;
 
     for (let artist of artists) {
         var artistDiv = createArtistDiv(artist);

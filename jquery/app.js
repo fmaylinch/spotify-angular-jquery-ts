@@ -16,7 +16,7 @@ console.log("Waiting for the promise value...");
 promise.done(function (data) {
     console.log("Received a successful response!");
     console.log(data);
-    var artists = data.artists.itsems;
+    var artists = data.artists.items;
     for (var _i = 0, artists_1 = artists; _i < artists_1.length; _i++) {
         var artist = artists_1[_i];
         var artistDiv = createArtistDiv(artist);
