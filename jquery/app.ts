@@ -1,6 +1,7 @@
 
 // Adds jQuery types
 /// <reference path="../common/typings/jquery.d.ts" />
+/// <reference path="../common/typings/spotify.d.ts" />
 
 console.log("Setting up jQuery things!");
 
@@ -23,12 +24,12 @@ let promise : JQueryXHR = $.ajax(settings);
 
 console.log("Waiting for the promise value...");
 
-promise.done(function (data) {
+promise.done(function (data: SpotifyApi.ArtistSearchResponse) {
 
     console.log("Received a successful response!")
     console.log(data);
 
-    let artists = data.artists.items;
+    let artists = data.artists.itsems;
 
     for (let artist of artists) {
         var artistDiv = createArtistDiv(artist);

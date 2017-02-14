@@ -1,6 +1,7 @@
 
 // Adds AngularJS types
 /// <reference path="../common/typings/angular.d.ts" />
+/// <reference path="../common/typings/spotify.d.ts" />
 
 console.log("Setting up angular module!");
 
@@ -23,7 +24,8 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
 
   console.log("Sending AJAX call!")
 
-  let promise = $http(settings)
+  // A promise of artists
+  let promise : ng.IHttpPromise<SpotifyApi.ArtistSearchResponse> = $http(settings)
 
   console.log("Waiting for the promise value...");
 
