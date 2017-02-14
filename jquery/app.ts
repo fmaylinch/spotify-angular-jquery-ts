@@ -1,5 +1,5 @@
 
-// Adds jQuery types
+// Adds TypeScript types
 /// <reference path="../common/typings/jquery.d.ts" />
 /// <reference path="../common/typings/spotify.d.ts" />
 
@@ -20,9 +20,10 @@ let settings = {
 
 console.log("Sending AJAX call!")
 
+// A promise of artists
 let promise : JQueryXHR = $.ajax(settings);
 
-console.log("Waiting for the promise value...");
+console.log("Setting up callback to get notified when the promise value is resolved");
 
 promise.done(function (data: SpotifyApi.ArtistSearchResponse) {
 

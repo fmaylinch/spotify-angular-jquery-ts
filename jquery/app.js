@@ -12,7 +12,7 @@ var settings = {
 };
 console.log("Sending AJAX call!");
 var promise = $.ajax(settings);
-console.log("Waiting for the promise value...");
+console.log("Setting up callback to get notified when the promise value is resolved");
 promise.done(function (data) {
     console.log("Received a successful response!");
     console.log(data);

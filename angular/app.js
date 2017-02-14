@@ -14,7 +14,7 @@ app.controller('MainController', function ($scope, $http) {
     };
     console.log("Sending AJAX call!");
     var promise = $http(settings);
-    console.log("Waiting for the promise value...");
+    console.log("Setting up callback to get notified when the promise value is resolved");
     promise.then(function successCallback(response) {
         console.log("Received a successful response!");
         console.log("Response:", response);

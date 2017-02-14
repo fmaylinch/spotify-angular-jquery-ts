@@ -1,5 +1,5 @@
 
-// Adds AngularJS types
+// Adds TypeScript types
 /// <reference path="../common/typings/angular.d.ts" />
 /// <reference path="../common/typings/spotify.d.ts" />
 
@@ -27,7 +27,7 @@ app.controller('MainController', function($scope, $http: ng.IHttpService) {
   // A promise of artists
   let promise : ng.IHttpPromise<SpotifyApi.ArtistSearchResponse> = $http(settings)
 
-  console.log("Waiting for the promise value...");
+  console.log("Setting up callback to get notified when the promise value is resolved");
 
   promise.then(function successCallback(response) {
 
